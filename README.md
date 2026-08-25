@@ -1,0 +1,2 @@
+# slotomania-playgame
+slotomania-playgame
