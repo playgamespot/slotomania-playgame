@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slotomania - Playgame</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="assets/img/app_images/favicon1.png">
+
+
+    <style>
+        .responsive-container {      
+            text-align: center;
+            padding: 10px 15px;
+        }
+        
+        .responsive-text {
+            font-family: Arial, sans-serif;
+            font-size: clamp(16px, 4vw, 20px);
+        }
+        
+        .responsive-ip {
+            display: block;
+            margin: 10px auto;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        #smallTitle span {
+            font-size: clamp(14px, 3.5vw, 18px);
+        }
+        </style>
+        
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .top-image,
+        .bottom-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        .responsive-text {
+            font-size: clamp(14px, 2.5vw, 22px);
+            line-height: 1.5;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 10px 20px;
+        }
+
+        /* RECENT ACTIVITY */
+        #onlineActivity {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+
+        .activityItem {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .activityItem:last-child {
+            border-bottom: none;
+        }
+
+        .flag {
+            width: 24px;
+            height: 18px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+/* COMMENTS SECTION */
+.comments-wrapper {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.comments-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comment {
+    display: flex;
+    gap: 10px;
+}
+
+.comment-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comment-content {
+    background: #f5f5f5;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.comment-name {
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.comment-msg {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.comment-actions {
+    font-size: 11px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.comments-loadmore {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #1877f2;
+    cursor: pointer;
+}
+
+.comment-form-section {
+    max-width: 800px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-form-section input,
+.comment-form-section textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.comment-form-section button {
+    width: 35%;
+    background: #1877f2;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center; /* centers links */
+    gap: 20px; /* space between links */
+}
+
+/* Base styles for all images */
+.top-image-container img,
+.bottom-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Container for the top image */
+.top-image-container {
+    width: 100%;
+    max-width: 1000px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+/* Container for the chips/bottom image */
+.shine-wrapper {
+    width: 100%;
+    max-width: 500px; /* Maintains the 500px limit you wanted */
+    margin: 20px auto; /* Adds spacing and keeps it centered */
+    cursor: pointer;
+}
+
+    </style>
+</head>
+
+<body>
+
+<header></header>
+
+<!-- TOP IMAGE -->
+<div class="top-image-container">
+    <img src="assets/img/app_images/header.jpeg" alt="header">
+</div>
+
+
+<main>
+    <h1>Welcome Bonus!</h1>   
+
+    <div class="responsive-container">
+
+        <span class="responsive-text">
+        You are Today's Lucky Player - 
+        <b>
+        <script>
+        var today_date= new Date()
+        var month=today_date.getMonth()
+        var today=today_date.getDate()
+        var year=today_date.getFullYear()
+        
+        var months = new Array(
+        "January","February","March","April","May","June",
+        "July","August","September","October","November","December");
+        
+        document.write(months[month]+" "+today+", "+year)
+        </script>
+        </b>
+        </span>
+
+        <div id="smallTitle">
+            <span style="color:#FF0000; font-weight:regular;">
+            Early Promo - Limited Time Offer!
+            </span>
+            </div>
+        
+
+        </div>
+        </br>
+
+
+    <p class="responsive-text">
+        Get this: for every single friend you bring to the casino by sharing this page, you will get
+        free bonus coins. If those friends become active players at the online casino,
+        you get another 100,000,000 coins on top of that.
+    </p>
+</main>
+<br>
+
+<div class="option-row"><div class="option-item">
+<div style="font-family:Arial;font-size:12px;color:#fa0505;">Like & Share first before claiming the bonus.</div><div class="share-cell"><div class="share-button"><a href="https://www.facebook.com/sharer.php?u=https://www.facebook.com/groups/2263408704465207" target="_blank"><img src="assets/img/app_images/like.png" alt="like" width="200" height="40" alt="facebook" /></a>
+
+</div>
+<div style="text-align: center;">
+    <span style="font-family: Trebuchet MS, sans-serif; font-size:12px;color:#000;">11,592,842 people like this</b></span></div></center>
+    
+
+
+
+<!-- RECENT ACTIVITY -->
+<section id="onlineActivity" class="hidden">
+    <h3>Recent Activity</h3>
+    <div id="activityBody"></div>
+</section>
+
+<p class="text-center text-danger" style="font-size:12px; color:red; font-weight:bold;">
+    Claim your bonus now before it expires!
+</p>
+<!-- BOTTOM IMAGE -->
+<style>
+    /* Shared shine container */
+    .shine-wrapper {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+    
+    /* Shine effect */
+    .shine-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.7) 50%,
+        rgba(255,255,255,0) 100%
+      );
+      transform: skewX(-25deg);
+      animation: shine 2.5s infinite;
+      pointer-events: none;
+    }
+    
+    @keyframes shine {
+      0% {
+        left: -75%;
+      }
+      100% {
+        left: 125%;
+      }
+    }
+    
+    /* Optional hover zoom */
+    .shine-wrapper:hover {
+      transform: scale(1.03);
+      transition: 0.2s ease;
+    }
+    </style>
+    
+    <div 
+      class="shine-wrapper"
+      onclick="window.location.href='https://ultradownloder.com/1116321';"
+      style="cursor:pointer;"
+    >
+      <img
+      src="assets/img/app_images/coins.png" 
+      alt="coins"
+        class="bottom-image"
+        style="max-width:500px; width:100%; height:auto; display:block;"
+      >
+    </div>
+
+
+    <br><br><br>
+
+
+    <p class="responsive-text">
+        Be sure to complete at least one offer to activate your Bonus Coins. Unfortunately, 
+        some people use automated programs for malicious purposes, so we want to make sure you are a real live person. 
+        Programs don't take offers people do, so these offers stop them. Have fun!
+    </p>
+    
+    <br><br><br><br>
+    
+    <div class="footer-icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin"></i>
+    </div>
+    
+    <div class="footer-nav">
+        <a href="#" class="footer-link">Home</a>
+            <a href="#" class="footer-link">Services</a>
+            <a href="#" class="footer-link">About</a>
+            <a href="#" class="footer-link">Terms</a>
+            <a href="#" class="footer-link">Policy</a>
+    </div>
+    
+    </div>
+    
+    
+    <footer>
+        <p><i>&copy; Slotomania Bonus. All rights reserved.</i></p>
+    </footer>
+    
+    
+
+<!-- SCRIPTS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+$(function () {
+
+    const users = ['Alex91', 'Kenndy', 'Jemz08', 'Sarah', 'GoldWin'];
+    const countries = ['us', 'gb', 'fr', 'de', 'ca', 'au', 'it', 'es'];
+
+    const userFlags = {};
+    users.forEach(user => {
+        userFlags[user] = countries[Math.floor(Math.random() * countries.length)];
+    });
+
+    let userQueue = [...users];
+
+    setInterval(function () {
+
+        $('#onlineActivity').removeClass('hidden');
+
+        if ($('.activityItem').length > 4) {
+            $('.activityItem').first().remove();
+        }
+
+        const user = userQueue.shift();
+        const country = userFlags[user];
+        const minutesAgo = Math.floor(Math.random() * 5) + 1;
+
+        $('#activityBody').append(
+            `<div class="activityItem">
+                <img class="flag" src="https://flagcdn.com/24x18/${country}.png" alt="${country}">
+                <span><strong>${user}</strong> (${minutesAgo} minutes ago) claimed a bonus</span>
+            </div>`
+        );
+
+        userQueue.push(user);
+
+    }, 2500);
+});
+</script>
+
+</body>
+</html>
